@@ -19,11 +19,16 @@ import java.nio.file.Paths;
 @Service
 public class MappingService {
 
+    @Autowired
+    private FetchedDataRepository fetchedDataRepository;
+    @Autowired
+    private MappingConfigurationRepository mappingConfigurationRepository;
+
     private GroovyShell groovyShell;
     private File file;
     private Script script;
 
-    public MappingService(){
+    public Object executeDataTransformationScript(String id){
         this.file = new File("src/main/java/in/rounik/project/MappingControllerScript.groovy");
         this.groovyShell = new GroovyShell();
         this.script = null;
@@ -32,5 +37,11 @@ public class MappingService {
         }catch(IOException e){
             e.printStackTrace();
         }
+
+        List<FetchedDataObject> fetchedData = fetchedDataRepository.findAll();
+        // MappingConfiguration mappingConfiguration = mappingConfigurationRepository.findById(id).get();
+        
+        Object result = script.invokeMethod("processFetchedData", new Object[]{fetchedData, mappingConfigurationRepository});
+        return result;
     }
 }
