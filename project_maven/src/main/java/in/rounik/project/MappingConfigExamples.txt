@@ -1,0 +1,247 @@
+1.
+Response :
+{
+    "folders": [
+        {
+            "folder_id": "folder_1",
+            "folder_name": "xyz",
+            "subfolders": [
+                {
+                    "subfolder_id": "subfolder_1",
+                    "subfolder_name": "abc",
+                    "articles": [
+                        {
+                            "article_id": "article_11",
+                            "title": "hello"
+                        },
+                        {
+                            "article_id": "article_12",
+                            "title": "hi"
+                        }
+                    ]
+                },
+                {
+                    "subfolder_id": "subfolder_2",
+                    "subfolder_name": "bcd",
+                    "articles": [
+                        {
+                            "article_id": "article_21",
+                            "title": "bye"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "folder_id": "folder_2",
+            "folder_name": "pqr",
+            "subfolders": [
+                {
+                    "subfolder_id": "subfolder_3",
+                    "subfolder_name": "def",
+                    "articles": [
+                        {
+                            "article_id": "article_31",
+                            "title": "good morning"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "folder_id": "folder_3",
+            "folder_name": "lmn",
+            "subfolders": [
+                {
+                    "subfolder_id": "subfolder_4",
+                    "subfolder_name": "ghi",
+                    "articles": [
+                        {
+                            "article_id": "article_41",
+                            "title": "good night"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+Config :
+{
+  "id": "1",
+  "folderFetchConfig": {
+    "apiFetchConfig": {
+      "hostname": "http://example.com",
+      "path": "/api/folders",
+      "params": "",
+      "headers": "",
+      "method": "GET",
+      "queryParams": {},
+      "requestHeaders": {},
+      "requestBody": "",
+      "authType": "NONE",
+      "authToken": "",
+      "maxRetries": 3,
+      "retryDelay": 1000
+    },
+    "paginationConfig": {
+      "pageParam": "page",
+      "offsetParam": "",
+      "pageSize": 10,
+      "offsetSize": 0
+    },
+    "foldersPath": "folders",
+    "folderIdPath": "folder_id"
+  },
+  "articleFetchConfig": {
+    "apiFetchConfig": {
+      "hostname": "http://example.com",
+      "path": "/api/articles",
+      "params": "",
+      "headers": "",
+      "method": "GET",
+      "queryParams": {},
+      "requestHeaders": {},
+      "requestBody": "",
+      "authType": "NONE",
+      "authToken": "",
+      "maxRetries": 3,
+      "retryDelay": 1000
+    },
+    "articlesPath": "articles",
+    "articleIdPath": "article_id",
+    "nestedFieldPath": "",
+    "fieldParam": "folder_id",
+    "nestedPathSeparator": ".",
+    "fieldParamPaths": [
+      "folder_id"
+    ],
+    "fieldParamRegex": ""
+  },
+  "translationFetchConfig": {
+    "localeParam": "locale",
+    "translationFetchParam": null,
+    "translationFields": ["en", "hin", "fr", "spn"],
+    "commonTranslationFieldPath": null
+  }
+}
+
+
+2.
+Response :
+{
+    "folder_id": "folder_1",
+    "folder_name": "xyz",
+    "subfolders": [
+        {
+            "subfolder_id": "subfolder_1",
+            "subfolder_name": "abc",
+        },
+        {
+            "subfolder_id": "subfolder_2",
+            "subfolder_name": "bcd",
+        }
+    ]
+}
+
+{
+    "id": "2",
+    "folderFetchHostname": "http://example.com",
+    "folderFetchPath": "/api/folders",
+    "folderFetchParams": "",
+    "folderFetchHeaders": "",
+    "folderFetchMethod": "GET",
+    "folderFetchQueryParams": {},
+    "folderFetchRequestHeaders": {},
+    "folderFetchRequestBody": "",
+    "folderFetchAuthType": "NONE",
+    "folderFetchAuthToken": "",
+    "folderFetchMaxRetries": 3,
+    "folderFetchRetryDelay": 1000,
+    "paginationPageParam": "page",
+    "paginationOffsetParam": "",
+    "paginationPageSize": 10,
+    "paginationOffsetSize": 0,
+    "articleFetchHostname": "http://example.com",
+    "articleFetchPath": "/api/articles",
+    "articleFetchParams": "",
+    "articleFetchHeaders": "",
+    "articleFetchQueryParams": {},
+    "articleFetchRequestHeaders": {},
+    "articleFetchRequestBody": "",
+    "articleFetchAuthType": "NONE",
+    "articleFetchAuthToken": "",
+    "articleFetchMaxRetries": 3,
+    "articleFetchRetryDelay": 1000,
+    "foldersPath": "folders",
+    "folderIdPath": "folder_id",
+    "fieldParam": "folder_id",
+    "nestedFieldPath": "",
+    "fieldParamPaths": [
+        "folder_id"
+    ],
+    "fieldParamRegex": "",
+    "articlesPath":"articles",
+    "articleIdPath": "article_id",
+    "nestedPathSeparator": "."
+}
+
+
+3.
+Response :
+{
+    "folder_id": "folder_1",
+    "folder_name": "xyz",
+    "subfolders": [
+        {
+            "subfolder_id": "subfolder_1",
+            "subfolder_name": "abc",
+            "article_ids": [
+                "ar_11", "ar_12", "ar_13"
+            ]
+        }
+    ]
+}
+
+{
+    "id": "3",
+    "folderFetchHostname": "http://example.com",
+    "folderFetchPath": "/api/folders",
+    "folderFetchParams": "",
+    "folderFetchHeaders": "",
+    "folderFetchMethod": "GET",
+    "folderFetchQueryParams": {},
+    "folderFetchRequestHeaders": {},
+    "folderFetchRequestBody": "",
+    "folderFetchAuthType": "NONE",
+    "folderFetchAuthToken": "",
+    "folderFetchMaxRetries": 3,
+    "folderFetchRetryDelay": 1000,
+    "paginationPageParam": "page",
+    "paginationOffsetParam": "",
+    "paginationPageSize": 10,
+    "paginationOffsetSize": 0,
+    "articleFetchHostname": "http://example.com",
+    "articleFetchPath": "/api/articles",
+    "articleFetchParams": "",
+    "articleFetchHeaders": "",
+    "articleFetchQueryParams": {},
+    "articleFetchRequestHeaders": {},
+    "articleFetchRequestBody": "",
+    "articleFetchAuthType": "NONE",
+    "articleFetchAuthToken": "",
+    "articleFetchMaxRetries": 3,
+    "articleFetchRetryDelay": 1000,
+    "foldersPath": "folders",
+    "folderIdPath": "folder_id",
+    "fieldParam": "article_id",
+    "nestedFieldPath": "subfolders.article_ids",
+    "fieldParamPaths": [
+        ""
+    ],
+    "fieldParamRegex": "",
+    "articlesPath":"articles",
+    "articleIdPath": "article_id",
+    "nestedPathSeparator": "."
+}

@@ -1,0 +1,4 @@
+for(subfolder : subfolders)
+    for(article : articles)
+        article_id = regex_compute(extract_atricle_id(article))
+        // save atricle_id as a related artcile_id for the current folder(folder_id)
